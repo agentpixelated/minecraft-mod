@@ -162,7 +162,12 @@ public final class ChatGptBrowserScreen extends Screen {
         MCEFBrowser browser = ChatGptBrowserService.browser();
         if (browser == null) return false;
 
-        browser.sendMouseWheel(browserX(mouseX), browserY(mouseY), verticalAmount, horizontalAmount);
+        browser.sendMouseWheel(
+                browserX(mouseX),
+                browserY(mouseY),
+                (int) Math.round(verticalAmount),
+                (int) Math.round(horizontalAmount)
+        );
         return true;
     }
 
