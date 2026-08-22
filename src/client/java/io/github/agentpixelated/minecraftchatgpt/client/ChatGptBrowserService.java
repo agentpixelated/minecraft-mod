@@ -205,9 +205,8 @@ public final class ChatGptBrowserService {
     public static void chat(Component message) {
         Minecraft client = Minecraft.getInstance();
         client.execute(() -> {
-            if (client.player != null) {
-                client.player.displayClientMessage(message, false);
-            }
+            client.gui.getChat().addClientSystemMessage(message);
+            client.getNarrator().saySystemChatQueued(message);
         });
     }
 
