@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "id": "minecraft-chatgpt-web",
+  "version": "${version}",
+  "name": "Minecraft ChatGPT Web",
+  "description": "Client-side ChatGPT access through an embedded chatgpt.com browser session. No OpenAI API key or OAuth token extraction.",
+  "authors": ["agentpixelated"],
+  "contact": {
+    "sources": "https://github.com/agentpixelated/minecraft-mod"
+  },
+  "license": "MIT",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "io.github.agentpixelated.minecraftchatgpt.client.MinecraftChatGptClient"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.19.3",
+    "minecraft": "~26.1.2",
+    "java": ">=25",
+    "fabric-api": "*",
+    "mcef": ">=2.2.0"
+  }
+}
