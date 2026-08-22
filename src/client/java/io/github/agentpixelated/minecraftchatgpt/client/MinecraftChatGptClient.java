@@ -6,8 +6,8 @@ import net.fabricmc.fabric.api.client.command.v2.ClientCommandRegistrationCallba
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
 
-import static net.fabricmc.fabric.api.client.command.v2.ClientCommandManager.argument;
-import static net.fabricmc.fabric.api.client.command.v2.ClientCommandManager.literal;
+import static net.fabricmc.fabric.api.client.command.v2.ClientCommands.argument;
+import static net.fabricmc.fabric.api.client.command.v2.ClientCommands.literal;
 
 public final class MinecraftChatGptClient implements ClientModInitializer {
     @Override
@@ -49,7 +49,7 @@ public final class MinecraftChatGptClient implements ClientModInitializer {
                 ChatGptBrowserService.chat(Component.literal("[GPT] Chromium could not be initialized."));
                 return;
             }
-            client.gui.setScreen(new ChatGptBrowserScreen());
+            client.setScreen(new ChatGptBrowserScreen());
         });
     }
 }
